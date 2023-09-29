@@ -15,17 +15,17 @@ namespace Kellogg_Array
 			list = new List<T>();
 			random = new Random();
 		}	
-		public void Add(T value)
+		public void Add()
 		{
-			if (list.Count < 50) 
+			for (char c = 'A'; c <= 'Z' && list.Count <50; c++) 
 			{
-				if (!list.Contains(value))
-				{
-					list.Add(value);
-				}
+				list.Add((T)(object)c);
+			}
+			for (char c = 'a'; c <= 'z' && list.Count<50; c++)
+			{
+				list.Add((T)(object)c);
 			}
 		}
-
 		public void Shuffle()
 		{
 			int n = list.Count;
